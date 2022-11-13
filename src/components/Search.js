@@ -38,7 +38,7 @@ function Search({token, toptracks, setToptracks, setReader, tracks, setTracks}){
                     setPlaylist(json.playlists.items)
                     setTrack(json.tracks.items)
                 })
-            }}><input type='text' ref={ref} placeholder='Search for songs, playlists...' tabIndex={-1}/></form></div>
+            }}><input type='text' ref={ref} spellcheck="false" placeholder='Search for songs, playlists...' tabIndex={-1}/></form></div>
             <div className='query-result'>
             <div>
                     <h1>Tracks</h1>

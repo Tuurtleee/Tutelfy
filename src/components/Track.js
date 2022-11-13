@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
 function Track({item, token, setToptracks, setReader}){
-    let durationms= item.duration_ms
-                    let duration = String(Math.round(((durationms/1000)/60)*100)/100).replace('.',':')
+    let ms= item.duration_ms
+    var min = Math.floor(ms/60000)
+    var sec = ((ms % 60000) / 1000).toFixed(0);
+    var duration = min + ":" + (sec < 10 ? '0' : '') + sec;
     return (<div className='track' onClick={()=>{
         fetch('https://api.spotify.com/v1/me/player/play', {
     method: 'PUT',

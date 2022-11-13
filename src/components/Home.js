@@ -18,8 +18,10 @@ function Home({token, queue, setQueue, toptracks, setToptracks, reader, setReade
             <div className='player'>
                 <h1 className='reader'>{reader}</h1>
                 {toptracks.map((track,i)=>{
-                    let durationms= track.duration_ms
-                    let duration = String(Math.round(((durationms/1000)/60)*100)/100).replace('.',':')
+                    let ms= track.duration_ms
+                    var min = Math.floor(ms/60000)
+                    var sec = ((ms % 60000) / 1000).toFixed(0);
+                    var duration = min + ":" + (sec < 10 ? '0' : '') + sec;
                     return (<div key={i} className='track' onClick={()=>{
                         fetch('https://api.spotify.com/v1/me/player/play', {
                     method: 'PUT',

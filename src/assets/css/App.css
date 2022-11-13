@@ -96,6 +96,7 @@ body{
 }
 .Playlist-container img{
     width: 120px;
+    height: 120px;
     border-radius: .7rem;
 }
 .Playlist-container{
@@ -150,8 +151,8 @@ body{
     overflow-y: scroll;
     position: fixed;
     width: 100%;
-    bottom: 59px;
-    height: calc(100% - 330px);
+    bottom: 85px;
+    height: calc(100% - 350px);
 }
 .player::-webkit-scrollbar-track,.query-result::-webkit-scrollbar-track
 {
