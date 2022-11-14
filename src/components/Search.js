@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import Playlist from './Playlist'
 import Track from './Track'
 
-function Search({token, toptracks, setToptracks, setReader, tracks, setTracks}){
+function Search({token, toptracks, setToptracks, setReader, tracks, setTracks, currentView, setCurrentView}){
     const ref = useRef()
     const[album,setAlbum]=useState([])
     const[track,setTrack]=useState([])
@@ -52,7 +52,7 @@ function Search({token, toptracks, setToptracks, setReader, tracks, setTracks}){
                     <h1>Playlists</h1>
                     <div className='flexbox'>
                     {playlist.map((pl,i)=>{
-                        return <Playlist token={token} item={pl} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} key={i}/>
+                        return <Playlist currentview={currentView} setCurrentView={setCurrentView} token={token} item={pl} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} key={i}/>
                     })}
                     </div>
                 </div>
@@ -60,7 +60,7 @@ function Search({token, toptracks, setToptracks, setReader, tracks, setTracks}){
                     <h1>Albums</h1>
                     <div className='flexbox'>
                     {album.map((pl,i)=>{
-                        return <Playlist token={token} item={pl} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} key={i}/>
+                        return <Playlist currentview={currentView} setCurrentView={setCurrentView} token={token} item={pl} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} key={i}/>
                     })}
                     </div>
                 </div>

@@ -1,25 +1,25 @@
 'use strict'
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu } = require('electron')
 const path = require('path')
 const url = require('url')
 var fs = require("fs");
 let mainWindow
 let dev = false
 
-
+Menu.setApplicationMenu(null);
 if (process.env.NODE_ENV !== undefined && process.env.NODE_ENV === 'development') {
   dev = true
 }
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1224,
+    width: 1424,
     height: 868,
     show: false,
-    autoHideMenuBar: false,
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false
+      contextIsolation: false,
+      devTools: false
     }
   })
 

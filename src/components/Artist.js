@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-function Playlist({item, token, setToptracks, setReader, currentView, setCurrentView}){
+function Artist({item,token, setToptracks, setReader, currentView, setCurrentView}){
     return (
-        <div className='Playlist-container' onClick={()=>{
+        <div className='Artist-container' onClick={()=>{
             setReader(item.name);
             fetch('https://api.spotify.com/v1/me/player/play', {
                     method: 'PUT',
@@ -14,7 +14,7 @@ function Playlist({item, token, setToptracks, setReader, currentView, setCurrent
                         "context_uri": item.uri
                       })
                 })
-            fetch('https://api.spotify.com/v1/playlists/'+item.id+'/tracks', {
+            fetch('https://api.spotify.com/v1/artists/'+item.id+'/top-tracks?country=US', {
                     method: 'GET',
                     headers: {
                         'Authorization':'Bearer '+token,
@@ -22,16 +22,14 @@ function Playlist({item, token, setToptracks, setReader, currentView, setCurrent
                     },
                 }).then((response)=>response.json())
                 .then((json)=>{
-                    let tracks = json.items.map((t)=>{
-                        return t.track
-                    })
-                    setToptracks(tracks)
+                    console.log(json)
+                    setToptracks(json.tracks)
                     setCurrentView("home")
                 })
-            }}>
-            <img src={item.images[0].url} alt="" draggable="false"/>
-            <h2>{item.name.slice(0,20)}</h2>
+        }}>
+            <img src= {item.images[0].url} />
+            <span>{item.name}</span>
         </div>
     )
 }
-export default Playlist
+export default Artist

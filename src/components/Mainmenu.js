@@ -3,6 +3,8 @@ import Topbar from './Topbar';
 import Home from './Home';
 import Footer from './Footer';
 import Search from './Search';
+import Library from './Library';
+import Account from './Account';
 
 function Mainmenu({token}){
     const [currentView,setCurrentView] =  useState('home')
@@ -12,8 +14,11 @@ function Mainmenu({token}){
     const [tracks,setTracks]=useState([])
     return (<>
     <Topbar currentView={currentView} token={token} setCurrentView={setCurrentView}/>
-    {currentView=="home"&& <Home token={token} queue={queue} setQueue={setQueue} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} reader={reader} tracks={tracks} setTracks={setTracks}/>}
-    {currentView=="search"&& <Search token={token} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} reader={reader}/>}
+    {currentView=="home"&& <Home currentview={currentView} setCurrentView={setCurrentView} token={token} queue={queue} setQueue={setQueue} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} reader={reader} tracks={tracks} setTracks={setTracks}/>}
+    {currentView=="search"&& <Search currentview={currentView} setCurrentView={setCurrentView} token={token} toptracks={toptracks} setToptracks={setToptracks} 
+    setReader={setReader} reader={reader}/>}
+    {currentView=="library" && <Library token={token} currentview={currentView} setCurrentView={setCurrentView} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} reader={reader} tracks={tracks} setTracks={setTracks}/>}
+    {currentView=="account" && <Account token={token} currentview={currentView} setCurrentView={setCurrentView} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} reader={reader} tracks={tracks} setTracks={setTracks}/>}
     <Footer queue={queue} setQueue={setQueue} token={token} tracks={tracks} setTracks={setTracks}/>
     </>)
 }

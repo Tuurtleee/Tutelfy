@@ -26,16 +26,6 @@ function App() {
     <div>
       {!token && (<Login url={url}/>)}
       {token &&(<Mainmenu token={token}/>)}
-      <script src="https://sdk.scdn.co/spotify-player.js"></script>
-      <script>
-        {window.onSpotifyWebPlaybackSDKReady = () => {
-    const player = new Spotify.Player({
-      name: 'Tutelfy',
-      getOAuthToken: cb => { cb(token); },
-      volume: 0.7
-    });
-    player.connect();}
-  }</script>
     </div>
   )
 }
