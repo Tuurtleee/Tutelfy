@@ -2,7 +2,7 @@
 
 *This projects is still under development!*
 
-Note that if you use the dev version it won't play music but it will play music on your official client. If you want to test it, open the official client.
+Note that if you use the dev version it won't play music but it will play music on your official client. If you want to test it, open the official client in background and use Tutelfy to play music on it.
 
 TODO: 
 
