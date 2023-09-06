@@ -9,7 +9,7 @@ import Mainmenu from './Mainmenu'
 
 function App() {
   const client_id = "182e813031444454b16e04942e7aac6e";
-  const redirect_uri = "http://0.0.0.0:8080/index.html";
+  const redirect_uri = "http://127.0.0.1:8080/index.html";
   var state = generateRandomString(16);
   var scope = 'user-read-private user-read-email playlist-read-private user-top-read user-read-playback-state user-modify-playback-state user-read-currently-playing user-read-recently-played';
   var url = 'https://accounts.spotify.com/authorize';

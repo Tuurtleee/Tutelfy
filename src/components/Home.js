@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Playlist from './Playlist';
 
-function Home({token, queue, setQueue, toptracks, setToptracks, reader, setReader, tracks, setTracks, currentView, setCurrentView}){
+function Home({token, queue, setQueue, toptracks, setToptracks, reader, setReader, tracks, setTracks, currentView, setCurrentView,currentPlayList,setCurrentPlaylist}){
     useEffect(()=>{
         fetchData('/me/playlists?limit=6',token,'playlists')
         if(toptracks.length==0){
@@ -12,7 +12,7 @@ function Home({token, queue, setQueue, toptracks, setToptracks, reader, setReade
         <div className='Home-container'>
             <div className='Playlists'>
             {tracks.length!=0 && tracks.map((obj,i)=>{
-                return <Playlist currentview={currentView} setCurrentView={setCurrentView} token={token} item={obj} key={i} setToptracks={setToptracks} setReader={setReader}/>
+                return <Playlist currentview={currentView} setCurrentView={setCurrentView} token={token} item={obj} key={i} setToptracks={setToptracks} setReader={setReader} setCurrentPlaylist={setCurrentPlaylist}/>
             })}
             </div>
             <div className='player'>

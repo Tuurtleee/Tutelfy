@@ -7,6 +7,9 @@
     padding: 0;
     user-select: none;
 }
+*:focus{
+    outline: none;
+}
 body{
     background: radial-gradient(#e03315, #966c2f);
     background-size: cover;
@@ -327,4 +330,73 @@ body{
 }
 .banner h1{
     font-size: 48px;
+}
+.bg-pl {
+  position: fixed;
+  background-size: 100% 100%!important;
+  top: -60px;
+  left: -60px;
+  width: 120%;
+  height: 120%;
+  height: calc(100% - 60px);
+  background-size: 100% 100%;
+  filter:blur(38px) brightness(0.4);
+  pointer-events: none;
+  overflow: hidden;
+
+}
+.Playlist-Page header{
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  z-index: 100;
+  top: 75px;
+  left: 4%;
+}
+.Playlist-Page header img{
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+}
+.Playlist-content{
+  height: calc(100% - 400px);
+  width: 100%;
+  position: fixed;
+  bottom:96px;
+  margin-top: 20px;
+  background: linear-gradient(0deg,#161617,#161617b2);
+  overflow-y: auto;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  transition: box-shadow 0.3s ease;
+}
+
+.playlist-pp{
+  width: 200px;
+  border-radius: .7rem;
+}
+
+.playlist-topper{
+  margin-left: 20px;
+}
+.playlist-topper p{
+  color: #9f9fa3;
+  max-width: 600px;
+  font-size: 15px;
+  margin-top: 5px;
+}
+.playlist-title{
+  font-size: 40px;
+  margin-bottom: 9px;
+}
+.playlist-topper p button{
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.87);
+  border: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  padding: 1px;
+}
+.playlist-topper p button:hover{
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 0.67);
 }
