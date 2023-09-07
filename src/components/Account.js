@@ -17,7 +17,7 @@ function Account({token, queue, setQueue, toptracks, setToptracks, reader, setRe
     },[token])
     return (<>
             <div className='banner'>
-                <img src={user && user.images[0].url}></img>
+                <img src={user && user.images[1].url}></img>
                 <h1>{user && user.display_name}</h1>
             </div>
         <div className='Account-container'>

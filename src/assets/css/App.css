@@ -334,13 +334,13 @@ body{
 .bg-pl {
   position: fixed;
   background-size: 100% 100%!important;
-  top: -60px;
+  top: 60px;
   left: -60px;
   width: 120%;
   height: 120%;
   height: calc(100% - 60px);
   background-size: 100% 100%;
-  filter:blur(38px) brightness(0.4);
+  filter:blur(33px) brightness(0.4);
   pointer-events: none;
   overflow: hidden;
 

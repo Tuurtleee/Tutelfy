@@ -5,6 +5,7 @@ function Playlist({item, token, setToptracks, setReader, currentView, setCurrent
         <div className='Playlist-container' onClick={()=>{
             setCurrentView("playlist")
             setCurrentPlaylist(item)
+            console.log(item)
             //fetch('https://api.spotify.com/v1/me/player/play', {
             //        method: 'PUT',
             //        headers: {
@@ -14,19 +15,6 @@ function Playlist({item, token, setToptracks, setReader, currentView, setCurrent
             //        body:JSON.stringify({
             //            "context_uri": item.uri
             //          })
-            //    })
-            //fetch('https://api.spotify.com/v1/playlists/'+item.id+'/tracks', {
-            //        method: 'GET',
-            //        headers: {
-            //            'Authorization':'Bearer '+token,
-            //            'Content-Type': 'application/json',
-            //        },
-            //    }).then((response)=>response.json())
-            //    .then((json)=>{
-            //        let tracks = json.items.map((t)=>{
-            //            return t.track
-            //        })
-            //        setToptracks(tracks)
             //    })
             }}>
             <img src={item.images[0].url} alt="" draggable="false"/>

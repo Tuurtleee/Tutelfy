@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import Playlist from './Playlist'
 import Track from './Track'
 
-function Search({token, toptracks, setToptracks, setReader, tracks, setTracks, currentView, setCurrentView}){
+function Search({token, toptracks, setToptracks, setReader, tracks, setTracks, currentView, setCurrentView, setCurrentPlaylist}){
     const ref = useRef()
     const[album,setAlbum]=useState([])
     const[track,setTrack]=useState([])
@@ -38,7 +38,7 @@ function Search({token, toptracks, setToptracks, setReader, tracks, setTracks, c
                     setPlaylist(json.playlists.items)
                     setTrack(json.tracks.items)
                 })
-            }}><input type='text' ref={ref} spellcheck="false" placeholder='Search for songs, playlists...' tabIndex={-1}/></form></div>
+            }}><input type='text' ref={ref} spellCheck="false" placeholder='Search for songs, playlists, artists, users ...' tabIndex={-1}/></form></div>
             <div className='query-result'>
             <div>
                     <h1>Tracks</h1>
@@ -52,7 +52,7 @@ function Search({token, toptracks, setToptracks, setReader, tracks, setTracks, c
                     <h1>Playlists</h1>
                     <div className='flexbox'>
                     {playlist.map((pl,i)=>{
-                        return <Playlist currentview={currentView} setCurrentView={setCurrentView} token={token} item={pl} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} key={i}/>
+                        return <Playlist currentview={currentView} setCurrentView={setCurrentView} token={token} item={pl} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} key={i} setCurrentPlaylist={setCurrentPlaylist}/>
                     })}
                     </div>
                 </div>
@@ -60,7 +60,7 @@ function Search({token, toptracks, setToptracks, setReader, tracks, setTracks, c
                     <h1>Albums</h1>
                     <div className='flexbox'>
                     {album.map((pl,i)=>{
-                        return <Playlist currentview={currentView} setCurrentView={setCurrentView} token={token} item={pl} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} key={i}/>
+                        return <Playlist currentview={currentView} setCurrentView={setCurrentView} token={token} item={pl} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} key={i} setCurrentPlaylist={setCurrentPlaylist}/>
                     })}
                     </div>
                 </div>
