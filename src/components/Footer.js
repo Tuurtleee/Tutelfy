@@ -15,7 +15,7 @@ function Footer({token}){
         }
         setInterval(()=>{
             fetchData('/me/player',token,'playing')
-        },1000)// WARNING: TODO: find the best interval to not reach the rate limit
+        },400)// WARNING: TODO: find the best interval to not reach the API rate limit
     },[playingStatus])
     return (
         <div className='Footer-container'>
