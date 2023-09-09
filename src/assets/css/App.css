@@ -97,6 +97,10 @@ body{
     align-items: center;
     flex-flow: wrap;
 }
+.flexbox span{
+  display: flex;
+  align-items: center;
+}
 .Playlist-container img{
     height: 120px;
     width: 120px;
@@ -228,10 +232,10 @@ body{
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 12px 0;
+    padding: 8px 0;
     border-top: 1px solid rgba(128, 128, 128, 0.274);
     height: 71px;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .previous{
     margin-left: 15px;
@@ -464,4 +468,39 @@ background: linear-gradient(0deg,#161617,#161617b2);
     width: 100%;
     bottom: 96px;
     height: calc(100% - 310px);
+}
+.nowplaying{
+  width: 60px;
+  margin-left: 20px;
+  border-radius: .4rem;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+.nowplaying:hover{
+  filter:brightness(0.65);
+}
+
+
+
+input[type="range"] {
+  width: 20rem;
+  height: 5px;
+  background: linear-gradient(to right, #13a044, #13a044) 0% 0% no-repeat;
+  background-size: var(--slider-width, 0%) 100%;
+  border-radius: .8rem;
+  cursor: pointer;
+  position: relative;
+}
+input[type="range"]::-webkit-slider-thumb {
+  background: #13a044;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 2; /* Empile le curseur au-dessus de la piste */
+}
+
+.progress-bar-container{
+  margin-right: 30px;
 }

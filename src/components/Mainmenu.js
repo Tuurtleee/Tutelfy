@@ -22,7 +22,7 @@ function Mainmenu({token}){
     {currentView=="library" && <Library token={token} currentview={currentView} setCurrentView={setCurrentView} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} reader={reader} tracks={tracks} setTracks={setTracks}/>}
     {currentView=="account" && <Account token={token} currentview={currentView} setCurrentView={setCurrentView} toptracks={toptracks} setToptracks={setToptracks} setReader={setReader} reader={reader} tracks={tracks} setTracks={setTracks} setCurrentPlaylist={setCurrentPlaylist}/>}
     {currentView=="playlist" && <PlaylistView token={token} currentPlaylist={currentPlaylist} setToptracks={setToptracks} setReader={setReader}/>}
-    <Footer queue={queue} setQueue={setQueue} token={token} tracks={tracks} setTracks={setTracks}/>
+    <Footer queue={queue} setQueue={setQueue} token={token} tracks={tracks} setTracks={setTracks} setCurrentView={setCurrentView} setCurrentPlaylist={setCurrentPlaylist}/>
     </>)
 }
 
