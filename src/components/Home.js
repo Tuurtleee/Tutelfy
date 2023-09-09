@@ -3,7 +3,7 @@ import Playlist from './Playlist';
 
 function Home({token, queue, setQueue, toptracks, setToptracks, reader, setReader, tracks, setTracks, currentView, setCurrentView,currentPlayList,setCurrentPlaylist}){
     useEffect(()=>{
-        fetchData('/me/playlists?limit=6',token,'playlists')
+        fetchData('/me/playlists?limit=8',token,'playlists')
         if(toptracks.length==0){
             fetchData('/me/top/tracks?limit=15',token,'tracks')
         }

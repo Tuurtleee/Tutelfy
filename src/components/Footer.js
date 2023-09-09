@@ -59,7 +59,12 @@ function Footer({token}){
             'Content-Type': 'application/json'
         },
     })
-    .then(response => response.json())
+    .then(response =>{
+      if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
     .then(json =>{
         if(target=='playlists'){
             setTracks(json.items)
@@ -78,7 +83,9 @@ function Footer({token}){
                 setPlayingStatus(false)
             }
         }
-    })
+    }).catch(error => {
+      console.error('Fetch error:', error);
+    });
     }
 
     function changePlayingStatus(url, token,action){

@@ -301,18 +301,7 @@ body{
 .Artist-container:hover{
     background-color: #58585a7a;
 }
-.Account-container{
-    width: 100%;
-    position: fixed;
-    top:173px;
-    margin-top: 20px;
-    height: calc(100% - 309px);
-    background: linear-gradient(0deg,#161617,#161617b2);
-    overflow-y: scroll;
-    text-align: center;
-    font-style: italic;
-    padding: 50px 0;
-}
+
 .banner{
     display: flex;
     align-items: center;
@@ -340,11 +329,12 @@ body{
   height: 120%;
   height: calc(100% - 60px);
   background-size: 100% 100%;
-  filter:blur(33px) brightness(0.4);
+  filter: blur(33px) brightness(0.4);
   pointer-events: none;
   overflow: hidden;
-
+  animation: blurAnimation .6s linear forwards; /* Change the duration and animation timing as needed */
 }
+
 .Playlist-Page header{
   display: flex;
   align-items: flex-end;
@@ -437,7 +427,7 @@ body{
   transform: scale(1.08);
 }
 .track-playing .trackname{
-  color: rgb(223, 150, 14);
+  color: rgb(100, 233, 88);
 }
 .track-playing{
   background-color: rgba(185, 178, 178, 0.062);
@@ -458,4 +448,20 @@ body{
 .flex{
   display: flex;
   align-items: center;
+}
+
+.mgtop{
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.Account-container{
+background: linear-gradient(0deg,#161617,#161617b2);
+    padding: 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    overflow-y: scroll;
+    position: fixed;
+    width: 100%;
+    bottom: 96px;
+    height: calc(100% - 310px);
 }

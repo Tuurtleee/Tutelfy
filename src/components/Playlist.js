@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 function Playlist({item, token, setToptracks, setReader, currentView, setCurrentView,setCurrentPlaylist}){
+
     return (
         <div className='Playlist-container' onClick={()=>{
             setCurrentView("playlist")
